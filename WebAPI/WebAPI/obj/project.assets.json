@@ -8265,11 +8265,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dev\\bugtracker\\Bug-Tracker\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "D:\\dev\\Bug-Tracker\\WebAPI\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "D:\\dev\\bugtracker\\Bug-Tracker\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectPath": "D:\\dev\\Bug-Tracker\\WebAPI\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\milad\\.nuget\\packages\\",
-      "outputPath": "D:\\dev\\bugtracker\\Bug-Tracker\\WebAPI\\WebAPI\\obj\\",
+      "outputPath": "D:\\dev\\Bug-Tracker\\WebAPI\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\milad\\AppData\\Roaming\\NuGet\\NuGet.Config",
