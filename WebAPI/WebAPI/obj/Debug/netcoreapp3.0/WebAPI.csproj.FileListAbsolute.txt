@@ -330,3 +330,11 @@ D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.RazorTargetAssem
 D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csproj.CopyComplete
 D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.dll
 D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.pdb
+D:\dev\Bug-Tracker\WebAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\dev\Bug-Tracker\WebAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\dev\Bug-Tracker\WebAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Logging.dll
+D:\dev\Bug-Tracker\WebAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.dll
+D:\dev\Bug-Tracker\WebAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\dev\Bug-Tracker\WebAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
+D:\dev\Bug-Tracker\WebAPI\WebAPI\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
+D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache

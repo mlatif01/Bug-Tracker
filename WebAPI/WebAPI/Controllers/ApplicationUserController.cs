@@ -67,7 +67,7 @@ namespace WebAPI.Controllers
                         new Claim("UserID", user.Id.ToString())
                     }),
                     Expires = DateTime.UtcNow.AddMinutes(5),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567890123456")), SecurityAlgorithms.HmacSha256Signature)
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
                 };
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
             }
             else
             {
-                return BadRequest(new { message = "Username of password is incorrect" });
+                return BadRequest(new { message = "Username or password is incorrect" });
             }
         }
 
