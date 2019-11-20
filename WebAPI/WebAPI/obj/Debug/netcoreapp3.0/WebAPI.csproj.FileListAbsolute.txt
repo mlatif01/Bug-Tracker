@@ -330,4 +330,3 @@ D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.RazorTargetAssem
 D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csproj.CopyComplete
 D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.dll
 D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.pdb
-D:\dev\Bug-Tracker\WebAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
