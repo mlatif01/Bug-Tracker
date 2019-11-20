@@ -23,7 +23,9 @@ import { UserService } from './shared/user.service';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      progressBar: true
+    })
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
