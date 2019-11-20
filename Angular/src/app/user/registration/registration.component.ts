@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
                 break;
               default:
                 // registration failed
-                this.toastr.error(element.description, 'Registration failed.');
+                this.toastr.error(element.description, 'Registration failed');
                 break;
             }
           });
