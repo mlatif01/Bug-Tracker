@@ -15,6 +15,7 @@
 |   |
 |   +--• auth
 |   |  |--auth.guard.ts
+|   |  |--auth.interceptor.ts
 |   |
 |   |--app.module.ts
 |   |--app-routing.module.ts (route configs)
