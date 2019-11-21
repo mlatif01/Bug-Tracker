@@ -13,6 +13,9 @@
 |   +--• shared
 |   |  |--user.service.ts
 |   |
+|   +--• auth
+|   |  |--auth.guard.ts
+|   |
 |   |--app.module.ts
 |   |--app-routing.module.ts (route configs)
 |
