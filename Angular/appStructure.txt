@@ -7,6 +7,9 @@
 |   |  +--• login
 |   |  |  |--login.component.ts|.html
 |   |
+|   +--• home
+|   |  |--home.component.ts|.html
+|   |
 |   +--• shared
 |   |  |--user.service.ts
 |   |
