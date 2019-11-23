@@ -35,11 +35,18 @@ namespace WebAPI
 
             services.AddControllers();
 
-            // inject the authentication context class into the application
+            // inject the context classes into the application
+            // auth context
             services.AddDbContext<AuthenticationContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
             });
+
+            // bug context
+            //services.AddDbContext<BugContext>(options =>
+            //{
+            //    options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            //});
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AuthenticationContext>();

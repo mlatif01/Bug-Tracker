@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { UserService } from './shared/user.service';
+import { BugService } from './shared/bug.service';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
@@ -34,7 +35,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
       progressBar: true
     })
   ],
-  providers: [UserService, {
+  providers: [UserService, BugService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
