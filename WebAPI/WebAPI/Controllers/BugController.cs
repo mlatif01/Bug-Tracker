@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Extensions;
 using WebAPI.Models;
@@ -17,6 +19,12 @@ namespace WebAPI.Controllers
         {
             _db = db;
             _userManager = userManager;
+        }
+
+        [HttpGet("api/bug")]
+        public IEnumerable<Bug> GetBugs()
+        {
+            return _db.Bugs.Where(bug => bug.ApplicationUserId == User.GetUserId());
         }
 
         [HttpPost("api/bug")]
