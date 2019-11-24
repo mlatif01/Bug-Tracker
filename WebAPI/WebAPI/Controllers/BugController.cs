@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Extensions;
 using WebAPI.Models;
 
 namespace WebAPI.Controllers
@@ -21,11 +19,10 @@ namespace WebAPI.Controllers
             _userManager = userManager;
         }
 
-
         [HttpPost("api/bug")]
         public async Task<IActionResult> AddBug()
         {
-            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            string userId = User.GetUserId();
 
             var user = await _userManager.FindByIdAsync(userId);
 
