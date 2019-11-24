@@ -11,5 +11,7 @@ namespace WebAPI.Models
     {
         [Column(TypeName="nvarchar(150)")]
         public string FullName { get; set; }
+
+        public ICollection<Bug> Bugs { get; set; }
     }
 }

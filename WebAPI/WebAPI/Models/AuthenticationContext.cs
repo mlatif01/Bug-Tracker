@@ -9,11 +9,15 @@ namespace WebAPI.Models
 {
     public class AuthenticationContext: IdentityDbContext
     {
-        public AuthenticationContext(DbContextOptions options): base(options)
-        {
-
-        }
+        public AuthenticationContext(DbContextOptions options)
+            : base(options)
+        { }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Bug> Bugs { get; set; }
+
+        // Do i add new db set here?
+        //public DbSet<UserBugDetails> Bugs { get; set; }
+
     }
 }
