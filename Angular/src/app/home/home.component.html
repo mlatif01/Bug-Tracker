@@ -20,4 +20,15 @@
     </ul>
   </div>
 
-
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+  </thead>
+  <tbody  *ngFor="let bug of bugs">
+    <td>{{bug.id}}</td>
+    <td>{{bug.title}}</td>
+    <td>{{bug.description}}</td>
+  </tbody>
+</table>

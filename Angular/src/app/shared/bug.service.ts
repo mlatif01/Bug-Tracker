@@ -15,5 +15,8 @@ export class BugService {
     return this.http.get(this.BaseURI + '/BugDetails');
   }
 
+  getBugs() {
+    return this.http.get(this.BaseURI + '/bug');
+  }
 
 }
