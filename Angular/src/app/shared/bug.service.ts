@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Bug } from './bug.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BugService {
+
+  formData: Bug;
 
   readonly BaseURI = 'http://localhost:3000/api';
 

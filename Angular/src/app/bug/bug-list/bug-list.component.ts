@@ -7,7 +7,7 @@ import { BugService } from 'src/app/shared/bug.service';
 })
 export class BugListComponent implements OnInit {
 
-  pageTitle: string = 'Bug List';
+  pageTitle = 'Bug List';
   userDetails;
   bugs;
 

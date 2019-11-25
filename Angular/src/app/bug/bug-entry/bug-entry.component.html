@@ -1,1 +1,13 @@
-Bug Entry works
+<form #form="ngForm" autocomplete="off">
+  <div class="form-group">
+    <label>Title</label>
+    <input name="Title" #Title="ngModel" [(ngModel)]="bugService.formData.Title" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input name="Description" #Description="ngModel" [(ngModel)]="bugService.formData.Description" class="form-control" required>
+  </div>
+</form>
+<div class="form-group col-sm-12 text-center">
+  <button type="submit" class="btn btn-lg">Submit</button>
+</div>
