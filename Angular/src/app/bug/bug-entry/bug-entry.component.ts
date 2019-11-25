@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-bug-entry',
+  selector: 'bug-entry',
   templateUrl: './bug-entry.component.html',
   styles: []
 })
