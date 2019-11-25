@@ -12,26 +12,10 @@
   </ul>
 </div>
 
-
-
-<div class="card m-4">
-  <h4>Bug Details</h4>
-  <div class="table responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody class="booking-table" *ngFor="let bug of bugs">
-        <td>{{ bug.id }}</td>
-        <td>{{ bug.title }}</td>
-        <td>{{ bug.description }}</td>
-      </tbody>
-    </table>
-  </div>
+<div class="container">
+  <bug-list></bug-list>
 </div>
+
+
 
 

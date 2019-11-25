@@ -15,6 +15,7 @@ import { BugService } from './shared/bug.service';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { BugListComponent } from './bug/bug-list/bug-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     UserComponent,
     RegistrationComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    BugListComponent,
   ],
   imports: [
     BrowserModule,

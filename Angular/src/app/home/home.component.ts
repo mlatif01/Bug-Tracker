@@ -11,10 +11,8 @@ import { BugService } from '../shared/bug.service';
 export class HomeComponent implements OnInit {
 
   userDetails;
-  bugDetails;
-  bugs;
 
-  constructor(private router: Router, private userService: UserService, private bugService: BugService) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
     // get user details
@@ -26,18 +24,6 @@ export class HomeComponent implements OnInit {
         console.log(err);
       }
     );
-
-    // get bug details
-    this.bugService.getBugDetails().subscribe(
-      res => {
-        this.userDetails = res;
-      },
-      err => {
-        console.log(err);
-      }
-    );
-
-    this.bugService.getBugs().subscribe(res => this.bugs = res);
   }
 
   onLogout() {
