@@ -6,6 +6,7 @@ import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { BugListComponent } from './bug/bug-list/bug-list.component';
+import { BugEntryComponent } from './bug/bug-entry/bug-entry.component';
 
 
 const routes: Routes = [
@@ -17,8 +18,10 @@ const routes: Routes = [
     ]
   },
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard],
+  // Might be wrong?
     children: [
-      {path: 'bug-list', component: BugListComponent}
+      {path: 'bug-list', component: BugListComponent},
+      {path: 'bug-list', component: BugEntryComponent},
     ]
   }
 ];
