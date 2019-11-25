@@ -6,10 +6,7 @@ import { BugService } from '../shared/bug.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styles: [
-
-  ]
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
 

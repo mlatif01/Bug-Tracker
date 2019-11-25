@@ -3,7 +3,7 @@
   <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
 </nav>
 
-<div class="card m-5" style="width: 18rem" *ngIf="userDetails">
+<div class="card m-4" style="width: 20rem; background-color: orange;" *ngIf="userDetails">
   <h4>User Details</h4>
   <ul class="list-group">
     <li class="list-group-item"><strong>Username: </strong>{{userDetails.userName}}</li>
@@ -12,23 +12,26 @@
   </ul>
 </div>
 
-<div class="card m-5" style="width: 18rem" *ngIf="userDetails">
-    <h4>Bug Details</h4>
-    <ul class="list-group">
-      <li class="list-group-item"><strong>Title: </strong>PLACEHOLDER FOR TITLE</li>
-      <li class="list-group-item"><strong>Description: </strong>PLACEHOLDER FOR DESCRIPTION</li>
-    </ul>
-  </div>
 
-<table>
-  <thead>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Description</th>
-  </thead>
-  <tbody  *ngFor="let bug of bugs">
-    <td>{{bug.id}}</td>
-    <td>{{bug.title}}</td>
-    <td>{{bug.description}}</td>
-  </tbody>
-</table>
+
+<div class="card m-4">
+  <h4>Bug Details</h4>
+  <div class="table responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="booking-table" *ngFor="let bug of bugs">
+        <td>{{ bug.id }}</td>
+        <td>{{ bug.title }}</td>
+        <td>{{ bug.description }}</td>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
