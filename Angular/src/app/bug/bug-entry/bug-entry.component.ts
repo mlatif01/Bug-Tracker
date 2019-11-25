@@ -25,4 +25,20 @@ export class BugEntryComponent implements OnInit {
     };
   }
 
+  onSubmit(form: NgForm) {
+    this.insertRecord(form);
+  }
+
+  insertRecord(form: NgForm) {
+    console.log(form.value);
+    this.bugService.postBug(form.value).subscribe(
+      res => {
+        this.resetForm(form);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
 }

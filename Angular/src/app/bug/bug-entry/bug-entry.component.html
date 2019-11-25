@@ -2,12 +2,15 @@
   <div class="form-group">
     <label>Title</label>
     <input name="Title" #Title="ngModel" [(ngModel)]="bugService.formData.Title" class="form-control" required>
+    <div *ngIf="Title.touched && Title.invalid" class="validation-error">This field is required.</div>
   </div>
+
   <div class="form-group">
     <label>Description</label>
     <input name="Description" #Description="ngModel" [(ngModel)]="bugService.formData.Description" class="form-control" required>
+    <div *ngIf="Description.touched && Description.invalid" class="validation-error">This field is required.</div>
   </div>
 </form>
 <div class="form-group col-sm-12 text-center">
-  <button type="submit" class="btn btn-lg">Submit</button>
+  <button (click)="onSubmit(form)" type="submit" class="btn btn-lg" [disabled]="form.invalid">Submit</button>
 </div>

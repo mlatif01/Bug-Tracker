@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,22 +29,39 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("api/bug")]
-        public async Task<IActionResult> AddBug()
+        public async Task<Object> PostBug(Bug model)
         {
             string userId = User.GetUserId();
 
-            var user = await _userManager.FindByIdAsync(userId);
-
-            _db.Bugs.Add(new Bug
+            _db.Bugs.Add(new Bug 
             {
                 ApplicationUserId = userId,
-                Description = $"{user.FullName} bug description",
-                Title = $"{user.FullName} bug title"
+                Description = model.Description,
+                Title = model.Title
             });
 
             await _db.SaveChangesAsync();
 
             return Ok();
+
         }
+
+        //public async Task<IActionResult> AddBug()
+        //{
+        //    string userId = User.GetUserId();
+
+        //    var user = await _userManager.FindByIdAsync(userId);
+
+        //    _db.Bugs.Add(new Bug
+        //    {
+        //        ApplicationUserId = userId,
+        //        Description = $"{user.FullName} bug description",
+        //        Title = $"{user.FullName} bug title"
+        //    });
+
+        //    await _db.SaveChangesAsync();
+
+        //    return Ok();
+        //}
     }
 }
