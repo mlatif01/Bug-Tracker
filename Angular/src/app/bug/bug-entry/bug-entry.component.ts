@@ -31,7 +31,7 @@ export class BugEntryComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form.value)
-    if (form.value.Id == null) {
+    if (form.value.Id == 0) {
       this.insertRecord(form);
     } else {
       this.updateRecord(form);
@@ -40,10 +40,10 @@ export class BugEntryComponent implements OnInit {
   }
 
   updateRecord(form: NgForm) {
-    console.log("UPDATE CALLED");
+    console.log("EDIT");
     this.bugService.putBug(form.value).subscribe(
       res => {
-        this.toastrService.success('Edited Successfully', 'Bug Tracker');
+        this.toastrService.info('Edited Successfully', 'Bug Tracker');
         this.resetForm(form);
       },
       err => {
@@ -53,6 +53,7 @@ export class BugEntryComponent implements OnInit {
   }
 
   insertRecord(form: NgForm) {
+    console.log("POST");
     this.bugService.postBug(form.value).subscribe(
       res => {
         this.toastrService.success('Inserted Successfully', 'Bug Tracker');
