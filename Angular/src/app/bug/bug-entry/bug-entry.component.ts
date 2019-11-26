@@ -30,25 +30,32 @@ export class BugEntryComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if(form.value.Id == null) {
+    if (form.value.Id == null) {
       this.insertRecord(form);
+    } else {
+      this.updateRecord(form);
     }
-    else {
-
-    }
+    this.bugService.showEditSelect = false;
   }
 
   updateRecord(form: NgForm) {
-
+    this.bugService.putBug(form.value).subscribe(
+      res => {
+        this.toastrService.success('Edited Successfully', 'Bug Tracker');
+        this.resetForm(form);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   insertRecord(form: NgForm) {
-    console.log(form.value.Status);
-    console.log(form.value);
     this.bugService.postBug(form.value).subscribe(
       res => {
         this.toastrService.success('Inserted Successfully', 'Bug Tracker');
         this.resetForm(form);
+        this.bugService.getBugs();
       },
       err => {
         console.log(err);

@@ -27,8 +27,8 @@ export class BugService {
     return this.http.post(this.BaseURI + '/bug', formData);
   }
 
-  putBug(formData: FormBuilder) {
-    return this.http.post(this.BaseURI + '/bug', formData);
+  putBug(formData: Bug) {
+    return this.http.put(this.BaseURI + '/bug' + formData.Id, formData);
   }
 
 

@@ -22,13 +22,12 @@ namespace WebAPI.Controllers
             _userManager = userManager;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("api/bug")]
         public IEnumerable<Bug> GetBugs()
         {
             return _db.Bugs.Where(bug => bug.ApplicationUserId == User.GetUserId());
         }
 
-        // PUT: api/bug/1
         [HttpPut("api/bug/{id}")]
         public async Task<IActionResult> PutBug(int id, [FromBody] Bug bug)
         {
