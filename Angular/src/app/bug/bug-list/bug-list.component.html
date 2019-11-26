@@ -19,7 +19,7 @@
       <td (click)="populateForm(bug)">{{bug.title}}</td>
       <td (click)="populateForm(bug)">{{bug.description}}</td>
       <td (click)="populateForm(bug)">{{bug.status}}</td>
-      <td><button class="btn btn-sm btn-outline-danger">X</button></td>
+      <td><button (click)="onDelete(bug.id)" class="btn btn-sm btn-outline-danger">X</button></td>
     </tr>
   </tbody>
 </table>
