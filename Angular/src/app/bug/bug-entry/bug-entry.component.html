@@ -16,9 +16,6 @@
     <label>Status</label>
     <select required name="Status" #Status="ngModel" [(ngModel)]="bugService.formData.Status" class="custom-select form-control">
       <option>New</option>
-      <div *ngIf="Status.touched && Status.invalid" class="validation-error">
-        Default Status
-      </div>
     </select>
   </div>
 

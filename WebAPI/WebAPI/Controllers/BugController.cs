@@ -40,7 +40,7 @@ namespace WebAPI.Controllers
                 ApplicationUserId = userId,
                 Description = model.Description,
                 Title = model.Title,
-                Status = "New"
+                Status = model.Status
             });
 
             await _db.SaveChangesAsync();

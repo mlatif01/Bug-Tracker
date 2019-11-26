@@ -1,6 +1,7 @@
 <div *ngIf="bugService.showEditSelect" class="form-group col-md-6">
-  <label>Status</label>
+  <label>Edit Status</label>
   <select required name="Status" #Status="ngModel" [(ngModel)]="bugService.formData.Status" class="custom-select">
+    <option>New</option>
     <option value="Open">Open</option>
     <option value="In Progress">In Progress</option>
     <option value="Resolved">Resolved</option>
