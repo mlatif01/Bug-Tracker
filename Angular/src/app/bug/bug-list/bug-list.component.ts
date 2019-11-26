@@ -15,7 +15,7 @@ export class BugListComponent implements OnInit {
 
   ngOnInit() {
     // get bug details
-    this.bugService.getBugDetails().subscribe(
+    this.bugService.getBugs().subscribe(
       res => {
         this.userDetails = res;
       },
@@ -23,8 +23,6 @@ export class BugListComponent implements OnInit {
         console.log(err);
       }
     );
-
-    this.bugService.getBugs().subscribe(res => this.bugs = res);
   }
 
 
