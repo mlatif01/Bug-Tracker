@@ -14,7 +14,7 @@
     <div *ngIf="Description.touched && Description.invalid" class="validation-error">This field is required.</div>
   </div>
 
-  <div class="form-group col-md-6">
+  <div class="form-group">
     <label *ngIf="!bugService.showEditSelect">Status</label>
     <label *ngIf="bugService.showEditSelect">Edit Status</label>
     <select required name="Status" #Status="ngModel" [(ngModel)]="bugService.formData.Status" class="custom-select form-control">
