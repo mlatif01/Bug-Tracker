@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BugService } from 'src/app/shared/bug.service';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'bug-entry',
@@ -9,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class BugEntryComponent implements OnInit {
 
-  constructor(public bugService: BugService) { }
+  constructor(public bugService: BugService, private toastrService: ToastrService ) { }
 
   ngOnInit() {
     this.resetForm();
@@ -21,7 +22,8 @@ export class BugEntryComponent implements OnInit {
     }
     this.bugService.formData = {
       Title: '',
-      Description: ''
+      Description: '',
+      Status: ''
     };
   }
 
@@ -33,6 +35,7 @@ export class BugEntryComponent implements OnInit {
     console.log(form.value);
     this.bugService.postBug(form.value).subscribe(
       res => {
+        this.toastrService.success('Inserted Successfully', 'Bug Tracker');
         this.resetForm(form);
       },
       err => {
