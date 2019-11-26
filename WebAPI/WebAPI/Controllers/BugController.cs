@@ -22,12 +22,14 @@ namespace WebAPI.Controllers
             _userManager = userManager;
         }
 
+        // GET: api/bug
         [HttpGet("api/bug")]
         public IEnumerable<Bug> GetBugs()
         {
             return _db.Bugs.Where(bug => bug.ApplicationUserId == User.GetUserId());
         }
 
+        // PUT: api/bug/1
         [HttpPut("api/bug/{id}")]
         public async Task<IActionResult> PutBug(int id, [FromBody] Bug bug)
         {
@@ -46,6 +48,24 @@ namespace WebAPI.Controllers
 
         }
 
+        // DELETE: api/bug/1
+        [HttpDelete("api/bug/{id}")]
+        public async Task<IActionResult> DeleteBug(int id)
+        {
+            var bug = await _db.Bugs.FindAsync(id);
+
+            if (bug == null)
+            {
+                return NotFound();
+            }
+
+            _db.Bugs.Remove(bug);
+            await _db.SaveChangesAsync();
+
+            return Ok(bug);
+        }
+
+        // POST: api/bug
         [HttpPost("api/bug")]
         public async Task<IActionResult> AddBug([FromBody] Bug model)
         {
