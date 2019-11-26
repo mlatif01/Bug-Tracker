@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BugService } from 'src/app/shared/bug.service';
 import { Bug } from 'src/app/shared/bug.model';
+import { BugEntryComponent } from '../bug-entry/bug-entry.component';
 
 @Component({
   selector: 'bug-list',
@@ -11,7 +12,6 @@ export class BugListComponent implements OnInit {
   pageTitle = 'Bug List';
   userDetails;
   bugs;
-  showSelect: boolean;
 
   constructor(public bugService: BugService) { }
 
@@ -22,9 +22,10 @@ export class BugListComponent implements OnInit {
 
   populateForm(bug: Bug) {
     console.log(bug);
+    this.bugService.showSelect = false;
     this.bugService.formData.Title = bug.title;
     this.bugService.formData.Description = bug.description;
-    this.showSelect = true;
+    this.bugService.showEditSelect = true;
   }
 
 

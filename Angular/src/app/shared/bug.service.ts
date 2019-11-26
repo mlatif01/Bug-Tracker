@@ -8,6 +8,9 @@ import { Bug } from './bug.model';
 })
 export class BugService {
 
+  showSelect = true;
+  showEditSelect = false;
+
   formData: Bug;
   bugList: Bug[];
 

@@ -1,4 +1,4 @@
-<!-- <div *ngIf="showSelect" class="form-group col-md-6">
+<div *ngIf="bugService.showEditSelect" class="form-group col-md-6">
   <label>Status</label>
   <select required name="Status" #Status="ngModel" [(ngModel)]="bugService.formData.Status" class="custom-select">
     <option value="Open">Open</option>
@@ -9,7 +9,7 @@
       Specify Status
     </div>
   </select>
-</div> -->
+</div>
 
 <table class="table table-hover">
   <thead>
