@@ -21,6 +21,7 @@ export class BugEntryComponent implements OnInit {
       form.resetForm();
     }
     this.bugService.formData = {
+      Id: null,
       Title: '',
       Description: '',
       Status: 'New'
@@ -29,7 +30,16 @@ export class BugEntryComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.insertRecord(form);
+    if(form.value.Id == null) {
+      this.insertRecord(form);
+    }
+    else {
+
+    }
+  }
+
+  updateRecord(form: NgForm) {
+
   }
 
   insertRecord(form: NgForm) {
