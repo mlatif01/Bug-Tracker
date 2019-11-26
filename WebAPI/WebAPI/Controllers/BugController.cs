@@ -36,6 +36,9 @@ namespace WebAPI.Controllers
                 return BadRequest();
             }
 
+            string userId = User.GetUserId();
+
+            bug.ApplicationUserId = userId;
             _db.Update(bug);
             await _db.SaveChangesAsync();
 
