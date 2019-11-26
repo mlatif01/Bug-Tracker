@@ -106,10 +106,14 @@ div.form-group label:first-child{
 button[type="submit"]{
   background-color: #67dfd4;
   color: #fff;
-
 }
+
+button[type="submit"]:hover {
+  background-color: #ccff00a1;
+}
+
 .jumbotron{
-  background-color: #fff;
+  background-color: #ffa500;
   padding-top: 32px;
 }
 
