@@ -108,9 +108,9 @@ button[type="submit"]{
   color: #fff;
 }
 
-button[type="submit"]:hover {
+/* button.ng-touched[type="submit"]:hover {
   background-color: #ccff00a1;
-}
+} */
 
 .jumbotron{
   background-color: #ffa500;

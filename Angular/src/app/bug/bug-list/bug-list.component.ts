@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BugService } from 'src/app/shared/bug.service';
+import { Bug } from 'src/app/shared/bug.model';
 
 @Component({
   selector: 'bug-list',
@@ -18,6 +19,10 @@ export class BugListComponent implements OnInit {
     this.bugService.getBugs().subscribe(res => this.bugs = res);
   }
 
+  populateForm(bug: Bug) {
+    console.log(bug);
+    this.bugService.formData = bug;
+  }
 
 
 }
