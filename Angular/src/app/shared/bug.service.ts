@@ -31,5 +31,9 @@ export class BugService {
     return this.http.put(this.BaseURI + '/bug/' + formData.Id, formData);
   }
 
+  deleteBug(id: number) {
+    return this.http.delete(this.BaseURI + '/bug/' + id);
+  }
+
 
 }
