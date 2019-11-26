@@ -16,12 +16,12 @@ export class BugService {
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   getBugs() {
-    return this.http.get(this.BaseURI + '/bug')
-    .toPromise().then(res => this.bugList = res as Bug[]);
+    return this.http.get(this.BaseURI + '/bug');
   }
 
   postBug(formData: FormBuilder) {
     return this.http.post(this.BaseURI + '/bug', formData);
   }
+
 
 }
