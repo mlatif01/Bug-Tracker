@@ -11,6 +11,7 @@ export class BugListComponent implements OnInit {
   pageTitle = 'Bug List';
   userDetails;
   bugs;
+  showSelect: boolean;
 
   constructor(public bugService: BugService) { }
 
@@ -21,7 +22,9 @@ export class BugListComponent implements OnInit {
 
   populateForm(bug: Bug) {
     console.log(bug);
-    this.bugService.formData = bug;
+    this.bugService.formData.Title = bug.title;
+    this.bugService.formData.Description = bug.description;
+    this.showSelect = true;
   }
 
 

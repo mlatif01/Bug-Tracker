@@ -23,8 +23,9 @@ export class BugEntryComponent implements OnInit {
     this.bugService.formData = {
       Title: '',
       Description: '',
-      Status: ''
+      Status: 'New'
     };
+    form.reset({Status: 'New'});
   }
 
   onSubmit(form: NgForm) {
@@ -42,6 +43,7 @@ export class BugEntryComponent implements OnInit {
         console.log(err);
       }
     );
+    this.bugService.formData.Status = 'New';
   }
 
 }
