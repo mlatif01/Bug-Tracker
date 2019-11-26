@@ -12,10 +12,18 @@
     <div *ngIf="Description.touched && Description.invalid" class="validation-error">This field is required.</div>
   </div>
 
-  <div *ngIf="bugService.showSelect" class="form-group col-md-6">
-    <label>Status</label>
+  <div class="form-group col-md-6">
+    <label *ngIf="!bugService.showEditSelect">Status</label>
+    <label *ngIf="bugService.showEditSelect">Edit Status</label>
     <select required name="Status" #Status="ngModel" [(ngModel)]="bugService.formData.Status" class="custom-select form-control">
       <option>New</option>
+      <option *ngIf="bugService.showEditSelect" value="Open">Open</option>
+      <option *ngIf="bugService.showEditSelect" value="In Progress">In Progress</option>
+      <option *ngIf="bugService.showEditSelect" value="Resolved">Resolved</option>
+      <option *ngIf="bugService.showEditSelect" value="Closed">Closed</option>
+      <div *ngIf="!Status.touched && Status.invalid" class="validation-error">
+        Specify Status
+      </div>
     </select>
   </div>
 

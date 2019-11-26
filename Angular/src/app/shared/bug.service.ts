@@ -10,6 +10,7 @@ export class BugService {
 
   showSelect = true;
   showEditSelect = false;
+  EditStatus;
 
   formData: Bug;
   bugList: Bug[];

@@ -22,7 +22,6 @@ export class BugListComponent implements OnInit {
 
   populateForm(bug: Bug) {
     console.log(bug);
-    this.bugService.showSelect = false;
     this.bugService.formData.Title = bug.title;
     this.bugService.formData.Description = bug.description;
     this.bugService.showEditSelect = true;

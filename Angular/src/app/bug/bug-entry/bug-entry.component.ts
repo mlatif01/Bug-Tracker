@@ -33,6 +33,7 @@ export class BugEntryComponent implements OnInit {
   }
 
   insertRecord(form: NgForm) {
+    console.log(form.value.Status);
     console.log(form.value);
     this.bugService.postBug(form.value).subscribe(
       res => {
@@ -43,7 +44,6 @@ export class BugEntryComponent implements OnInit {
         console.log(err);
       }
     );
-    this.bugService.formData.Status = 'New';
   }
 
 }
