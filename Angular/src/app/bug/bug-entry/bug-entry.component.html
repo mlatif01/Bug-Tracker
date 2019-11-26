@@ -10,6 +10,20 @@
     <input name="Description" #Description="ngModel" [(ngModel)]="bugService.formData.Description" class="form-control" required>
     <div *ngIf="Description.touched && Description.invalid" class="validation-error">This field is required.</div>
   </div>
+
+  <!-- <div class="form-group col-md-6">
+    <label>Status</label>
+    <select required name="Status" #Status="ngModel" [(ngModel)]="bugService.formData.Status" class="custom-select">
+      <option value="Open">Open</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Resolved">Resolved</option>
+      <option value="Closed">Closed</option>
+      <div *ngIf="Status.touched && Status.invalid" class="validation-error">
+        Specify Status
+      </div>
+    </select>
+  </div> -->
+
 </form>
 <div class="form-group col-sm-12 text-center">
   <button (click)="onSubmit(form)" type="submit" class="btn btn-lg" [disabled]="form.invalid">Submit</button>
