@@ -21,12 +21,11 @@ export class BugListComponent implements OnInit {
   }
 
   populateForm(bug: Bug) {
-    console.log(bug);
-    console.log(bug.id);
     this.bugService.formData.Title = bug.title;
     this.bugService.formData.Description = bug.description;
     this.bugService.formData.Id = bug.id;
     this.bugService.showEditSelect = true;
+    console.log(this.bugService.formData);
   }
 
 

@@ -1,5 +1,7 @@
 <h4>Add/Edit Bug</h4>
 <form #form="ngForm" autocomplete="off">
+  <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="bugService.formData.Id">
+
   <div class="form-group">
     <label>Title</label>
     <input name="Title" #Title="ngModel" [(ngModel)]="bugService.formData.Title" class="form-control" required>
