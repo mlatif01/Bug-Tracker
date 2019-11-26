@@ -4,7 +4,7 @@ body{
 }
 
 input.form-control, input.form-control:focus{
-  background-color: #FA7268;
+  background-color: #f5e2d4;
   color: black;
   border-color: black;
   border-radius: 0px;
@@ -19,6 +19,10 @@ button[type=submit].btn{
   border-radius: 20px;
   background-color: #ccff00;
   color: #000;
+}
+
+.custom-select {
+  background-color: #f5e2d4;
 }
 
 div.form-group label:not(.text-danger){
