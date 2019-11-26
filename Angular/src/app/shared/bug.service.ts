@@ -9,13 +9,15 @@ import { Bug } from './bug.model';
 export class BugService {
 
   formData: Bug;
+  bugList: Bug[];
 
   readonly BaseURI = 'http://localhost:3000/api';
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   getBugs() {
-    return this.http.get(this.BaseURI + '/bug');
+    return this.http.get(this.BaseURI + '/bug')
+    .toPromise().then(res => this.bugList = res as Bug[]);
   }
 
   postBug(formData: FormBuilder) {

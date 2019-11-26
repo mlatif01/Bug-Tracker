@@ -8,21 +8,12 @@ import { BugService } from 'src/app/shared/bug.service';
 export class BugListComponent implements OnInit {
 
   pageTitle = 'Bug List';
-  userDetails;
-  bugs;
 
   constructor(private bugService: BugService) { }
 
   ngOnInit() {
-    // get bug details
-    this.bugService.getBugs().subscribe(
-      res => {
-        this.userDetails = res;
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    // get bug list
+    this.bugService.getBugs();
   }
 
 
