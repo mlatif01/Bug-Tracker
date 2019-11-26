@@ -29,11 +29,13 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("api/bug")]
-        public async Task<Object> PostBug(Bug model)
+        public async Task<IActionResult> AddBug([FromBody] Bug model)
         {
             string userId = User.GetUserId();
 
-            _db.Bugs.Add(new Bug 
+            var user = await _userManager.FindByIdAsync(userId);
+
+            _db.Bugs.Add(new Bug
             {
                 ApplicationUserId = userId,
                 Description = model.Description,
@@ -43,25 +45,6 @@ namespace WebAPI.Controllers
             await _db.SaveChangesAsync();
 
             return Ok();
-
         }
-
-        //public async Task<IActionResult> AddBug()
-        //{
-        //    string userId = User.GetUserId();
-
-        //    var user = await _userManager.FindByIdAsync(userId);
-
-        //    _db.Bugs.Add(new Bug
-        //    {
-        //        ApplicationUserId = userId,
-        //        Description = $"{user.FullName} bug description",
-        //        Title = $"{user.FullName} bug title"
-        //    });
-
-        //    await _db.SaveChangesAsync();
-
-        //    return Ok();
-        //}
     }
 }

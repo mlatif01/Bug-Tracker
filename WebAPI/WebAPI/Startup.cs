@@ -42,11 +42,6 @@ namespace WebAPI
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
             });
 
-            // bug context
-            //services.AddDbContext<BugContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
-            //});
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AuthenticationContext>();
