@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BugService } from 'src/app/shared/bug.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bug-entry',
@@ -10,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BugEntryComponent implements OnInit {
 
-  constructor(public bugService: BugService, private toastrService: ToastrService ) { }
+  constructor(public bugService: BugService, private toastrService: ToastrService, private router: Router ) { }
 
   ngOnInit() {
     this.resetForm();
@@ -45,6 +46,8 @@ export class BugEntryComponent implements OnInit {
       res => {
         this.toastrService.info('Edited Successfully', 'Bug Tracker');
         this.resetForm(form);
+        // temporary fix
+        this.router.navigateByUrl('/user/login');
       },
       err => {
         console.log(err);

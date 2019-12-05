@@ -40,7 +40,6 @@ export class BugListComponent implements OnInit {
           console.log(err);
         });
     }
-
   }
 
 }
