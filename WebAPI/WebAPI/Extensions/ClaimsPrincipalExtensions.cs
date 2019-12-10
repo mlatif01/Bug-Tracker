@@ -12,5 +12,10 @@ namespace WebAPI.Extensions
         {
             return user.Claims.First(c => c.Type == "UserID").Value;
         }
+
+        public static string GetProjectId(this ClaimsPrincipal project)
+        {
+            return project.Claims.First(c => c.Type == "ProjectId").Value;
+        }
     }
 }

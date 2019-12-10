@@ -9,9 +9,9 @@ namespace WebAPI.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [Column(TypeName="nvarchar(150)")]
+        [Column(TypeName = "nvarchar(150)")]
         public string FullName { get; set; }
 
-        public ICollection<Bug> Bugs { get; set; }
+        public ICollection<Project> Projects { get; set; }
     }
 }

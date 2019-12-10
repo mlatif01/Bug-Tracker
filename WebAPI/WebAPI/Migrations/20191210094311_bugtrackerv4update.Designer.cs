@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Models;
 
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(AuthenticationContext))]
-    partial class AuthenticationContextModelSnapshot : ModelSnapshot
+    [Migration("20191210094311_bugtrackerv4update")]
+    partial class bugtrackerv4update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -234,7 +236,10 @@ namespace WebAPI.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProjectId")
+                    b.Property<string>("ProjectId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ProjectId1")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
@@ -245,7 +250,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectId1");
 
                     b.ToTable("Bugs");
                 });
@@ -338,9 +343,7 @@ namespace WebAPI.Migrations
                 {
                     b.HasOne("WebAPI.Models.Project", null)
                         .WithMany("Bugs")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProjectId1");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Project", b =>

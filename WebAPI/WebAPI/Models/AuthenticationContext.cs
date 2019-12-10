@@ -14,6 +14,8 @@ namespace WebAPI.Models
         { }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Project> Projects { get; set; }
+
         public DbSet<Bug> Bugs { get; set; }
 
         // Do i add new db set here?

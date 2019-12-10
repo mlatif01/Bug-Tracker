@@ -1,28 +1,15 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand text-white">JWT Auth System - <strong>{{userDetails.userName}}</strong> is logged in</a>
-  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
-</nav>
+<!-- <nav class="navbar navbar-light" style="background-color: #9ed0ecc5;">
+  <a class="navbar-brand text-white">Logged in as: <strong>{{userDetails.userName}}</strong></a>
+  <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+</nav> -->
 
-<div class="card m-4" style="width: 20rem; background-color: orange;" *ngIf="userDetails">
+<!-- <div class="card m-4" style="width: 20rem; background-color: orange;" *ngIf="userDetails">
   <h4>User Details</h4>
   <ul class="list-group">
     <li class="list-group-item"><strong>Username: </strong>{{userDetails.userName}}</li>
     <li class="list-group-item"><strong>Fullname: </strong>{{userDetails.fullName}}</li>
     <li class="list-group-item"><strong>Email: </strong>{{userDetails.email}}</li>
   </ul>
-</div>
+</div> -->
 
-<div class="container">
-  <div class="jumbotron m-4">
-    <h1 class="display-4 text-center"><strong>Bug Tracker</strong></h1>
-    <hr>
-    <div class="row">
-      <div class="col-md-5">
-        <bug-entry></bug-entry>
-      </div>
-      <div class="col-md-7" style="background-color: #fbff003d; border-radius: 20px;">
-        <bug-list></bug-list>
-      </div>
-    </div>
-  </div>
-</div>
+<app-main-nav></app-main-nav>

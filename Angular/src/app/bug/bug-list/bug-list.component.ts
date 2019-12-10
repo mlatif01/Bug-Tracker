@@ -3,6 +3,7 @@ import { BugService } from 'src/app/shared/bug.service';
 import { Bug } from 'src/app/shared/bug.model';
 import { BugEntryComponent } from '../bug-entry/bug-entry.component';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bug-list',
@@ -14,11 +15,11 @@ export class BugListComponent implements OnInit {
   userDetails;
   bugs;
 
-  constructor(public bugService: BugService, private toastrService: ToastrService) { }
+  constructor(public bugService: BugService, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit() {
     // get bug details
-    this.bugService.getBugs().subscribe(res => this.bugs = res);
+    this.bugService.getBugs(this.bugService.projectId).subscribe(res => this.bugs = res);
   }
 
   populateForm(bug: Bug) {
@@ -33,8 +34,10 @@ export class BugListComponent implements OnInit {
     if (confirm('Are you sure you wish to delete this record?')) {
       this.bugService.deleteBug(id).subscribe(
         res => {
-          this.bugService.getBugs();
+          this.bugService.getBugs(this.bugService.projectId);
           this.toastrService.warning('Deleted Successfully', 'Bug Tracker');
+          // temporary fix
+          this.router.navigateByUrl('/user/login');
         },
         err => {
           console.log(err);

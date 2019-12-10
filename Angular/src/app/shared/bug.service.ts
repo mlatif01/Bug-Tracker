@@ -11,6 +11,7 @@ export class BugService {
   showSelect = true;
   showEditSelect = false;
   EditStatus;
+  projectId;
 
   formData: Bug;
   bugList: Bug[];
@@ -19,11 +20,12 @@ export class BugService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  getBugs() {
-    return this.http.get(this.BaseURI + '/bug');
+  getBugs(projectId: number) {
+    return this.http.get(this.BaseURI + '/bug/' + projectId);
   }
 
-  postBug(formData: FormBuilder) {
+  postBug(formData: Bug, projectId: number) {
+    formData.ProjectId = projectId;
     return this.http.post(this.BaseURI + '/bug', formData);
   }
 

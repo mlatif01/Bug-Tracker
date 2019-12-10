@@ -3,15 +3,16 @@ import { BugService } from 'src/app/shared/bug.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { ProjectService } from 'src/app/shared/project.service';
 
 @Component({
-  selector: 'bug-entry',
-  templateUrl: './bug-entry.component.html',
+  selector: 'project-entry',
+  templateUrl: './project-entry.component.html',
   styles: []
 })
-export class BugEntryComponent implements OnInit {
+export class ProjectEntryComponent implements OnInit {
 
-  constructor(public bugService: BugService, private toastrService: ToastrService, private router: Router ) { }
+  constructor(public projectService: ProjectService, private toastrService: ToastrService, private router: Router ) { }
 
   ngOnInit() {
     this.resetForm();
@@ -21,32 +22,29 @@ export class BugEntryComponent implements OnInit {
     if (form != null) {
       form.resetForm();
     }
-    this.bugService.formData = {
+    this.projectService.formData = {
       Id: 0,
       Title: '',
       Description: '',
-      Status: 'New',
-      ProjectId: 0
     };
     form.reset({Status: 'New'});
   }
 
   onSubmit(form: NgForm) {
     console.log(form.value)
-    if (form.value.Id === 0) {
+    if (form.value.Id == 0) {
       this.insertRecord(form);
     } else {
       this.updateRecord(form);
     }
-    this.bugService.showEditSelect = false;
+    this.projectService.showEditSelect = false;
   }
 
   updateRecord(form: NgForm) {
     console.log("EDIT");
-    form.value.projectId = this.bugService.projectId;
-    this.bugService.putBug(form.value).subscribe(
+    this.projectService.putProject(form.value).subscribe(
       res => {
-        this.toastrService.info('Edited Successfully', 'Bug List');
+        this.toastrService.info('Edited Successfully', 'Project List');
         this.resetForm(form);
         // temporary fix
         this.router.navigateByUrl('/user/login');
@@ -59,10 +57,11 @@ export class BugEntryComponent implements OnInit {
 
   insertRecord(form: NgForm) {
     console.log("POST");
-    this.bugService.postBug(form.value, this.bugService.projectId).subscribe(
+    this.projectService.postProject(form.value).subscribe(
       res => {
-        this.toastrService.success('Inserted Successfully', 'Bug List');
+        this.toastrService.success('Inserted Successfully', 'Project List');
         this.resetForm(form);
+        this.projectService.getProjects();
         // temporary fix
         this.router.navigateByUrl('/user/login');
       },

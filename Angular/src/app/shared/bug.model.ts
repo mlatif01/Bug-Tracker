@@ -1,6 +1,7 @@
 export class Bug {
-  id: number;
-  title: string;
-  description: string;
-  status: string;
+  Id: number;
+  Title: string;
+  Description: string;
+  Status: string;
+  ProjectId: number;
 }

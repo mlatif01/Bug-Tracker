@@ -1,0 +1,26 @@
+<!-- <div *ngIf="bugService.showEditSelect" class="form-group col-md-6">
+  <label>Edit Status</label>
+  <select required name="Status" #Status="ngModel" [(ngModel)]="bugService.formData.Status" class="custom-select">
+    <option>New</option>
+
+  </select>
+</div> -->
+
+<table class="table table-hover">
+  <thead>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody *ngFor="let project of projects">
+    <tr>
+      <td (click)="showBugs(project.id)">{{project.id}}</td>
+      <td (click)="showBugs(project.id)">{{project.title}}</td>
+      <td (click)="showBugs(project.id)">{{project.description}}</td>
+      <td><button (click)="populateForm(project)" class="btn btn-sm btn-outline-info">Edit</button></td>
+      <td><button (click)="onDelete(project.id)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+  </tbody>
+</table>

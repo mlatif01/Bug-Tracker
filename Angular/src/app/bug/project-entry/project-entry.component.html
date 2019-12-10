@@ -1,0 +1,35 @@
+<h4>Add/Edit Project</h4>
+<form #form="ngForm" autocomplete="off">
+  <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="projectService.formData.Id">
+
+  <div class="form-group">
+    <label>Title</label>
+    <input name="Title" #Title="ngModel" [(ngModel)]="projectService.formData.Title" class="form-control" required>
+    <div *ngIf="Title.touched && Title.invalid" class="validation-error">This field is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <input name="Description" #Description="ngModel" [(ngModel)]="projectService.formData.Description" class="form-control" required>
+    <div *ngIf="Description.touched && Description.invalid" class="validation-error">This field is required.</div>
+  </div>
+
+  <!-- <div class="form-group">
+    <label *ngIf="!projectService.showEditSelect">Status</label>
+    <label *ngIf="projectService.showEditSelect">Edit Status</label>
+    <select required name="Status" #Status="ngModel" [(ngModel)]="projectService.formData.Status" class="custom-select form-control">
+      <option>New</option>
+      <option *ngIf="bugService.showEditSelect" value="Open">Open</option>
+      <option *ngIf="bugService.showEditSelect" value="In Progress">In Progress</option>
+      <option *ngIf="bugService.showEditSelect" value="Resolved">Resolved</option>
+      <option *ngIf="bugService.showEditSelect" value="Closed">Closed</option>
+      <div *ngIf="!Status.touched && Status.invalid" class="validation-error">
+        Specify Status
+      </div>
+    </select>
+  </div> -->
+
+</form>
+<div class="form-group col-sm-12 text-center">
+  <button (click)="onSubmit(form)" type="submit" class="btn btn-lg" [disabled]="form.invalid">Submit</button>
+</div>
